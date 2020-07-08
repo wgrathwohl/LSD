@@ -20,7 +20,8 @@ python lsd_ica.py --test_freq 1000 --dim ${DIM} --mode functional-${L2} --save $
 ## To run MNIST (recommended L2 (10., 1., .1) LR in (.0001, .00001, .001)
 python lsd_mnist.py --lr ${LR} --batch_size 256 --l2 ${L2} --save ${SAVE} --k_iters 5 --e_iters 1 --n_steps 100 --epochs 100 --viz_freq 500 --arch mlp --logit --weight_decay .0005 --base_dist
 
-## To run hypothesis testing (must pip install git+https://github.com/wittawatj/kernel-gof.git and pip install git+https://github.com/wittawatj/interpretable-test)
+## To run hypothesis testing
+must pip install git+https://github.com/wittawatj/kernel-gof.git and pip install git+https://github.com/wittawatj/interpretable-test
 ### LSD
 python lsd_test.py --test rbm-pert --sigma_pert ${PERT} --n_iters 1000 --l2 .5 --batch_size 800 --weight_decay .0005 --seed ${SEED} --n_train 800 --n_val 100 --n_test 100 --save ${SAVE} --dropout --maximize_power --val_power
 ### FSSD
