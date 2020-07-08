@@ -11,13 +11,16 @@ python lsd_ica.py --test_freq 1000 --dim ${DIM} --mode mle --save ${SAVE} --lr $
 python lsd_ica.py --test_freq 1000 --dim ${DIM} --mode sm --save ${SAVE} --lr ${LR} --batch_size 1000 --test_batch_size 1000 --niters 100000 --log_freq 100 --seed ${SEED}
 ### nce
 python lsd_ica.py --test_freq 1000 --dim ${DIM} --mode nce --save ${SAVE} --lr ${LR} --batch_size 1000 --test_batch_size 1000 --niters 100000 --log_freq 100 --seed ${SEED}
-### cnce (recommended EPS in (.01 .1 1.))
+### cnce
+recommended EPS in (.01 .1 1.)
 python lsd_ica.py --test_freq 1000 --dim ${DIM} --mode cnce-${EPS} --save ${SAVE} --lr ${LR} --batch_size 1000 --test_batch_size 1000 --niters 100000 --log_freq 100 --seed ${SEED} 
-### LSD (recommended KITER in (1, 5) L2 in (.01, .1, 1., 10.)
+### LSD
+recommended KITER in (1, 5) L2 in (.01, .1, 1., 10.)
 python lsd_ica.py --test_freq 1000 --dim ${DIM} --mode functional-${L2} --save ${SAVE} --lr ${LR} --batch_size 1000 --test_batch_size 1000 --niters 100000 --log_freq 100 --k_iters ${KITER} --seed ${SEED} &
 
 
-## To run MNIST (recommended L2 (10., 1., .1) LR in (.0001, .00001, .001)
+## To run MNIST
+recommended L2 (10., 1., .1) LR in (.0001, .00001, .001)
 python lsd_mnist.py --lr ${LR} --batch_size 256 --l2 ${L2} --save ${SAVE} --k_iters 5 --e_iters 1 --n_steps 100 --epochs 100 --viz_freq 500 --arch mlp --logit --weight_decay .0005 --base_dist
 
 ## To run hypothesis testing
